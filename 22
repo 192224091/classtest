@@ -1,0 +1,23 @@
+. Program to add, subtract, multiply two numbers using pointers.
+Input
+A: 10
+B: 20
+Expected out put
+Sum = 30, Difference = -10, Product = 200#include <iostream>
+using namespace std;
+
+void addSubMul(int* a, int* b, int* sum, int* diff, int* prod) {
+    *sum = *a + *b;
+    *diff = *a - *b;
+    *prod = *a * *b;
+}
+
+int main() {
+    int a = 10, b = 20, sum, diff, prod;
+
+    addSubMul(&a, &b, &sum, &diff, &prod);
+
+    cout << "Sum = " << sum << ", Difference = " << diff << ", Product = " << prod << endl;
+
+    return 0;
+}
