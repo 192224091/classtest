@@ -1,0 +1,32 @@
+Write a C program to sort the elements in descending order.
+
+Test case:
+Input : 10 56 78 34 51 23 79 44 36 55 98
+Output : 98 79 78 56#include <stdio.h>
+
+int main() {
+  int arr[] = {10, 56, 78, 34, 51, 23, 79, 44, 36, 55, 98};
+  int n = sizeof(arr) / sizeof(arr[0]);
+
+  // Selection sort algorithm
+  for (int i = 0; i < n - 1; i++) {
+    int max_idx = i;
+    for (int j = i + 1; j < n; j++) {
+      if (arr[j] > arr[max_idx]) {
+        max_idx = j;
+      }
+    }
+    int temp = arr[i];
+    arr[i] = arr[max_idx];
+    arr[max_idx] = temp;
+  }
+
+  // Print the sorted array
+  for (int i = 0; i < n; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+
+  return 0;
+}
+ 
